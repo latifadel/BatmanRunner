@@ -1,0 +1,51 @@
+Prompt to AI:
+
+"I want you to create a complete runner-style game inspired by Subway Surfers, but in a simplified 2D format. Please provide three separate files: index.html, style.css, and script.js. Include the following requirements and details:
+
+Game Concept & Mechanics
+
+The player controls a main character running forward down a multi-lane path.
+The character can switch lanes (left or right) and jump (or ‘dodge’) to avoid obstacles.
+Obstacles should spawn periodically in different lanes and at various intervals.
+Incorporate a scoring system that increases over time or with collected items (e.g., coins).
+The game ends when the player collides with an obstacle.
+Add a way to restart the game when it ends.
+Styling & Assets
+
+Make it visually appealing, using gradients, shadows, smooth animations, and transitions.
+The background should be dynamic (e.g., moving or parallax-like effect) to give a sense of constant forward motion.
+The main character and obstacles can be simple shapes or minimal sprites (if easily included) but styled nicely using CSS.
+Include a ‘start screen’ or overlay with a play button.
+Design a game-over screen or message that pops up on collision.
+HTML Structure (index.html)
+
+Set up a basic HTML structure with a <canvas> or container for the game area.
+Include any necessary sections for the scoreboard, game-over messages, or instructions.
+Ensure the JavaScript and CSS files are properly linked.
+CSS Styling (style.css)
+
+Use advanced CSS styling (e.g., transitions, hover effects, keyframe animations) to add visual interest.
+Make the background look dynamic or city-themed to evoke a Subway Surfers feel.
+Style the character, obstacles, and any game interface elements (score text, buttons).
+Create a responsive layout if possible, so it works on desktop and mobile.
+JavaScript Functionality (script.js)
+
+Set up the game loop using requestAnimationFrame() or a similar approach.
+Implement character movement (lane switching, jumping).
+Randomly generate obstacles in different lanes at set intervals or based on time.
+Detect collisions between the character and obstacles.
+Keep track of and display the current score.
+Handle game-over logic, such as stopping the game loop, showing a restart button, and resetting everything.
+Optionally, add collectible items (coins, power-ups, etc.) that increase score or speed.
+Additional Details
+
+Comment your code thoroughly to explain how each part works.
+Use well-named variables and functions for clarity.
+If you have any suggestions for improvement or additional ideas (like power-ups, different character skins, or background music), feel free to include them.
+At the end, provide me with:*
+
+The complete index.html code.
+The complete style.css code.
+The complete script.js code.
+Make sure all the files work together to create a cohesive and beautiful runner-style game.
+Thank you!"*

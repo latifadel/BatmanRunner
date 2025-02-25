@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="40" viewBox="0 0 80 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Classic Batmobile - 1960s TV Series style -->
+  <defs>
+    <linearGradient id="metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#111"/>
+      <stop offset="50%" style="stop-color:#333"/>
+      <stop offset="100%" style="stop-color:#111"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main body -->
+  <path d="M10 30 L15 15 C20 10 60 10 65 15 L70 30 Z" fill="url(#metallic)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Iconic long fins -->
+  <path d="M50 15 L75 5 L70 30" fill="url(#metallic)" stroke="#000" stroke-width="2"/>
+  <path d="M30 15 L5 5 L10 30" fill="url(#metallic)" stroke="#000" stroke-width="2"/>
+  
+  <!-- Windshield -->
+  <path d="M30 17 L50 17 L45 25 L35 25 Z" fill="#6ea4bf" stroke="#000"/>
+  
+  <!-- Red striping -->
+  <path d="M10 28 L70 28" stroke="#ff0000" stroke-width="2"/>
+  
+  <!-- Headlights -->
+  <circle cx="15" cy="20" r="3" fill="#ffeb3b"/>
+  <circle cx="65" cy="20" r="3" fill="#ffeb3b"/>
+  
+  <!-- Wheels -->
+  <g id="wheel">
+    <circle cx="25" cy="30" r="6" fill="#333"/>
+    <circle cx="25" cy="30" r="3" fill="#666"/>
+    <line x1="25" y1="27" x2="25" y2="33" stroke="#888"/>
+    <line x1="22" y1="30" x2="28" y2="30" stroke="#888"/>
+  </g>
+  <use href="#wheel" x="30"/>
+
+  <!-- Bat symbol -->
+  <path d="M35 20 Q40 18 45 20 Q40 22 35 20" fill="#ff0000"/>
+
+  <!-- Neon underglow -->
+  <rect x="20" y="36" width="40" height="2" fill="#f00" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.8;0.5" dur="1s" repeatCount="indefinite"/>
+  </rect>
+</svg>
