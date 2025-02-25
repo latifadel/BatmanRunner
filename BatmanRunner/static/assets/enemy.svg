@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Robot body -->
+  <defs>
+    <linearGradient id="metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#666"/>
+      <stop offset="50%" style="stop-color:#999"/>
+      <stop offset="100%" style="stop-color:#666"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Main body -->
+  <path d="M15 20 L45 20 L50 40 L10 40 Z" fill="url(#metallic)" stroke="#333" stroke-width="2"/>
+
+  <!-- Head -->
+  <circle cx="30" cy="15" r="12" fill="url(#metallic)" stroke="#333" stroke-width="2"/>
+
+  <!-- Eyes -->
+  <g class="eyes">
+    <circle cx="25" cy="13" r="3" fill="#f00">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="35" cy="13" r="3" fill="#f00">
+      <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Antenna -->
+  <line x1="30" y1="3" x2="30" y2="8" stroke="#333" stroke-width="2"/>
+  <circle cx="30" cy="3" r="2" fill="#f00">
+    <animate attributeName="fill" values="#f00;#ff0;#f00" dur="1s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Mechanical details -->
+  <g stroke="#333" stroke-width="1" fill="none">
+    <path d="M20 25 L40 25"/>
+    <path d="M15 30 L45 30"/>
+    <path d="M12 35 L48 35"/>
+  </g>
+
+  <!-- Power core -->
+  <circle cx="30" cy="32" r="4" fill="#0ff">
+    <animate attributeName="r" values="4;5;4" dur="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="1s" repeatCount="indefinite"/>
+  </circle>
+</svg>

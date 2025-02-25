@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: var(--bs-dark);
+    perspective: 1000px;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--bs-dark-bg-subtle);
+    transform-style: preserve-3d;
+    transform: rotateX(15deg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.4) 40%,
+        rgba(0, 0, 0, 0.4) 60%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--bs-light);
+    z-index: 10;
+    transform: translateZ(100px);
+    backdrop-filter: blur(5px);
+}
+
+.score-display {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: var(--bs-light);
+    text-align: right;
+    z-index: 5;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateZ(50px);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.score {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.multiplier {
+    font-size: 18px;
+    color: var(--bs-info);
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* Road styling */
+.road {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--bs-dark) 0px,
+        var(--bs-dark) calc(100% / 3),
+        var(--bs-dark-bg-subtle) calc(100% / 3),
+        var(--bs-dark-bg-subtle) calc(200% / 3),
+        var(--bs-dark) calc(200% / 3)
+    );
+    transform: rotateX(60deg);
+    transform-origin: bottom;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    transition: all 0.3s ease;
+    border: 2px solid var(--bs-info);
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--bs-info);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px var(--bs-info);
+    background: var(--bs-info);
+    color: var(--bs-dark);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.display-4 {
+    color: var(--bs-info);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.display-4::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: var(--bs-info);
+    box-shadow: 0 0 10px var(--bs-info);
+}
+
+.lead {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        height: 90vh;
+    }
+
+    .display-4 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .score-display {
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+}
+
+@keyframes neonPulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.neon-effect {
+    animation: neonPulse 2s infinite;
+}
+
+/* Add enhanced Skin Selector Styles */
+.skin-option {
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.skin-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--bs-info);
+}
+
+.skin-option.selected {
+    border-color: var(--bs-info);
+    box-shadow: 0 0 20px var(--bs-info);
+}
+
+.skin-option::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 255, 0.1) 0%,
+        transparent 70%
+    );
+    animation: rotateBg 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skin-option.selected::before {
+    opacity: 1;
+}
+
+.skin-option img {
+    display: block;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+    transition: transform 0.3s;
+}
+
+.skin-option:hover img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.skin-option span {
+    color: var(--bs-light);
+    font-size: 0.9rem;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotateBg {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.skin-option::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.skin-option:hover::after {
+    left: 100%;
+}
+
+/* Enhanced transitions */
+@keyframes skinTransition {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(1.2) rotate(180deg); opacity: 0; }
+    100% { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+.skin-changing {
+    animation: skinTransition 0.5s ease-in-out;
+}
+
+/* Enhanced glow effects */
+.neon-glow {
+    filter: drop-shadow(0 0 5px var(--bs-info))
+            drop-shadow(0 0 10px var(--bs-info))
+            drop-shadow(0 0 15px var(--bs-info));
+}
+
+/* Hover state enhancements */
+.skin-option:hover .neon-glow {
+    animation: glowPulse 1s infinite;
+}
+
+@keyframes glowPulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
